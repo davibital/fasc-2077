@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router";
-import Shows from "./pages/Shows";
-import Stages from "./pages/Stages";
-import Artists from "./pages/Artists";
+import Shows from "@/pages/Shows";
+import Stages from "@/pages/Stages";
+import Artists from "@/pages/Artists";
 
 export default function Router() {
   return (
