@@ -76,3 +76,24 @@
     @apply bg-background text-foreground;
   }
 }
+
+@font-face {
+  font-family: "Ligconsolata";
+  src: url("/src/assets/fonts/Ligconsolata-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Ligconsolata";
+  src: url("/src/assets/fonts/Ligconsolata-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Michroma";
+  src: url("/src/assets/fonts/Michroma-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
