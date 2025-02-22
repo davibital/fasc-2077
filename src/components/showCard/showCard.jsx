@@ -1,5 +1,7 @@
 import React from "react";
-import styles from "./ShowCard.module.css"; // Importando o CSS
+import styles from "./ShowCard.module.css";
+import { Link } from "react-router";
+import { Button } from "@/components/ui/button"
 
 export default function ShowCard({ show }) {
   return (
@@ -12,6 +14,7 @@ export default function ShowCard({ show }) {
         <p><strong>Data de Início:</strong> {new Date(show.startDate).toLocaleString()}</p>
         <p><strong>Data de Término:</strong> {new Date(show.endDate).toLocaleString()}</p>
         <p><strong>Localização:</strong> {show.location}</p>
+        <Button variant="" className="bg-blue"><Link className="no-underline" to={`/shows/${show.name}`}>Ver detalhes</Link></Button>
       </div>
     </div>
   );
