@@ -26,17 +26,17 @@ function App() {
           {/* BLOCO DE TEXTOS COM IMAGENS */}
           <div className="block_text text-white">
             <p className="text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi culpa deserunt, qui corporis voluptatibus quod, autem aperiam nesciunt itaque placeat reiciendis beatae. Doloremque laborum delectus nostrum quasi assumenda inventore totam.</p>
-            <img src="fasc1.jpg" className="padrao_img" alt="Imagem 1" />
+            <img src="fasc1.jpeg" className="padrao_img" alt="Imagem 1" />
           </div>
 
           <div className="block_text2 text-white">
             <p className="text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi culpa deserunt, qui corporis voluptatibus quod, autem aperiam nesciunt itaque placeat reiciendis beatae. Doloremque laborum delectus nostrum quasi assumenda inventore totam.</p>
-            <img src="fasc2.jpg" className="padrao_img" alt="Imagem 2" />
+            <img src="fasc2.jpeg" className="padrao_img" alt="Imagem 2" />
           </div>
 
           <div className="block_text text-white">
             <p className="text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi culpa deserunt, qui corporis voluptatibus quod, autem aperiam nesciunt itaque placeat reiciendis beatae. Doloremque laborum delectus nostrum quasi assumenda inventore totam.</p>
-            <img src="fasc3.jpg" className="padrao_img" alt="Imagem 3" />
+            <img src="fasc3.jpeg" className="padrao_img" alt="Imagem 3" />
           </div>
         </main>
 
