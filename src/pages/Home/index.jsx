@@ -1,53 +1,24 @@
-import React from 'react';
+import Layout from "@/components/layout";
 
-export default function App() {
+export default function Home() {
   return (
-    <>
-      <div className="min-h-screen bg-with flex flex-col justify-center items-center p-0 m-0">
-        <header className="w-full flex">
-          <noscript>You need to enable JavaScript to run this app.</noscript>
-    
-          {/* CABEÇALHO COM MENU PARA PALCOS */}
-          <div className="md:flex">
-            <div className="nav" id="menu">
-              <div className="box">
-                <img src="Logo.png" className="logo_fasc" alt="Logo FASC 2077" />
-                <h5 className="title text-dark">FASC 2077</h5>
-              </div>
-              <ul className="topicos text-dark">
-                <li><a href="shows.html">Shows</a></li>
-                <li><a href="palcos.html">Palcos</a></li>
-              </ul>
-            </div>
-          </div>
-        </header>
+    <Layout>
+      {/* Hero Section */}
+      <section className="h-screen flex items-center justify-center bg-cover bg-center relative" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1579125305607-15279d30d370?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')" }}>
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="relative z-10 text-center">
+          <h2 className="text-6xl font-extrabold">O MELHOR FESTIVAL DE SERGIPE</h2>
+          <p className="mt-4 text-lg text-gray-300">Viva a experiência do FASC 2077</p>
+          <a href="#ingressos" className="no-underline mt-6 inline-block px-6 py-3 bg-red-600 hover:bg-red-700 text-white text-lg rounded-full">
+            Garanta seu ingresso
+          </a>
+        </div>
+      </section>
 
-        <main className="w-full flex flex-col items-center">
-          {/* BLOCO DE TEXTOS COM IMAGENS */}
-          <div className="block_text text-dark">
-            <p className="text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi culpa deserunt, qui corporis voluptatibus quod, autem aperiam nesciunt itaque placeat reiciendis beatae. Doloremque laborum delectus nostrum quasi assumenda inventore totam.</p>
-            <img src="fasc1.jpg" className="padrao_img" alt="Imagem 1" />
-          </div>
-
-          <div className="block_text2 text-dark">
-            <p className="text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi culpa deserunt, qui corporis voluptatibus quod, autem aperiam nesciunt itaque placeat reiciendis beatae. Doloremque laborum delectus nostrum quasi assumenda inventore totam.</p>
-            <img src="fasc2.jpg" className="padrao_img" alt="Imagem 2" />
-          </div>
-
-          <div className="block_text text-dark">
-            <p className="text-sm">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi culpa deserunt, qui corporis voluptatibus quod, autem aperiam nesciunt itaque placeat reiciendis beatae. Doloremque laborum delectus nostrum quasi assumenda inventore totam.</p>
-            <img src="fasc3.jpg" className="padrao_img" alt="Imagem 3" />
-          </div>
-        </main>
-
-        <footer className="w-full flex justify-center box-border mt-8">
-          <div className="rodape text-center">
-            <p className="texto-rodape text-dark">© LAWD - LIGA ACADÊMICA DE DESENVOLVIMENTO WEB</p>
-          </div>
-        </footer>
-      </div>
-
-      <script type="module" src="/src/index.jsx"></script>
-    </>
+      {/* Seção ao rolar */}
+      <section id="sobre" className="h-screen flex items-center justify-center bg-gray-900">
+        <h2 className="text-4xl font-bold">Sobre o Evento</h2>
+      </section>
+    </Layout>
   );
 }
