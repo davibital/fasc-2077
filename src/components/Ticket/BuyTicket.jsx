@@ -6,9 +6,12 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
+import { Popover, PopoverContent } from "../ui/popover";
 import { FileInput } from "./FileInput";
 import { TicketDialog } from "./TicketDialog";
 import { fetchShows } from "@/api";
+import { Button } from "../ui/button";
+import { PopoverTrigger } from "@radix-ui/react-popover";
 
 export const BuyTicket = () => {
   const [shows, setShows] = useState([]);
@@ -26,6 +29,7 @@ export const BuyTicket = () => {
   const userImageState = useState(null);
 
   const [userImage, setUserImage] = userImageState;
+  const [error, setError] = useState(false);
   const [isTicketOpen, setIsTicketOpen] = useState(false);
   const [userData, setUserData] = useState({});
 
@@ -42,6 +46,11 @@ export const BuyTicket = () => {
     event.preventDefault();
 
     const formData = new FormData(event.target);
+
+    if (!userImage) {
+      setError(true);
+      return;
+    }
 
     setUserData(Object.fromEntries(formData));
     setIsTicketOpen(true);
@@ -62,12 +71,21 @@ export const BuyTicket = () => {
           {formLabels.map(({ label, type, name }) => {
             if (type === "file") {
               return (
-                <FileInput
-                  className="col-span-2"
-                  label={label}
-                  name={name}
-                  imageState={userImageState}
-                />
+                <Popover open={error} onOpenChange={setError}>
+                  <PopoverTrigger></PopoverTrigger>
+                  <PopoverContent
+                    align="center"
+                    className="text-red-500 w-96 absolute top-1/2 left-1/2"
+                  >
+                    É necessário enviar uma foto para identificação.
+                  </PopoverContent>
+                  <FileInput
+                    className="col-span-2"
+                    label={label}
+                    name={name}
+                    imageState={userImageState}
+                  />
+                </Popover>
               );
             }
 
@@ -75,7 +93,11 @@ export const BuyTicket = () => {
               <label key={label} className="flex flex-col gap-2 text-start">
                 {label}
                 {type === "select" ? (
-                  <select className="text-black p-2 rounded-md" name={name}>
+                  <select
+                    className="text-black p-2 rounded-md"
+                    name={name}
+                    required
+                  >
                     <option value="">Selecione um show</option>
                     {shows.map(({ name }) => (
                       <option className="text-black" value={name}>
@@ -85,6 +107,7 @@ export const BuyTicket = () => {
                   </select>
                 ) : (
                   <input
+                    required
                     className="text-black p-2 rounded-md"
                     type={type}
                     name={name}
@@ -93,9 +116,13 @@ export const BuyTicket = () => {
               </label>
             );
           })}
-          <button type="submit" className="col-span-2">
+          <Button
+            variant="outline"
+            type="submit"
+            className="col-span-2 w-fit bg-zinc-700"
+          >
             Adquirir ingresso
-          </button>
+          </Button>
         </form>
 
         <TicketDialog
