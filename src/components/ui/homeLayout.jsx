@@ -31,11 +31,7 @@ export default function HomeLayout({ children }) {
       <main className="flex-grow">{children}</main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-center py-6 mt-2">
-        <p className="text-gray-400">
-          © FASC 2077. Todos os direitos reservados.
-        </p>
-      </footer>
+      
     </div>
   );
 }
